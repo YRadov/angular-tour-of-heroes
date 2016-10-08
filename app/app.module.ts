@@ -5,6 +5,7 @@ import { RouterModule }  from '@angular/router';
 
 import { AppComponent }        from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { DashboardComponent }  from './dashboard.component';
 import { HeroesComponent }     from './heroes.component';
 import { HeroService }         from './hero.service';
 
@@ -16,19 +17,33 @@ import { HeroService }         from './hero.service';
         {
             path: 'heroes',
             component: HeroesComponent
-        }
-       ])
+        },
+        {
+            path: 'dashboard',
+            component: DashboardComponent
+        },
+        {
+            path: '',
+            redirectTo: '/dashboard',
+            pathMatch: 'full'
+        },
+        {
+        path: 'detail/:id',
+        component: HeroDetailComponent
+        },
 
+       ])
   ],
-  declarations: [
-      AppComponent,
-      HeroDetailComponent,
-      HeroesComponent
-  ],
-  providers: [
-    HeroService
-  ],
-  bootstrap: [ AppComponent ]
+    declarations: [
+    AppComponent,
+    DashboardComponent,
+    HeroDetailComponent,
+    HeroesComponent
+    ],  
+    providers: [
+        HeroService
+    ],
+    bootstrap: [ AppComponent ]
 })
 export class AppModule { 
 

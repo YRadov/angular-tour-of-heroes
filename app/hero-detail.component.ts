@@ -9,7 +9,6 @@ import { HeroService } from './hero.service';
     templateUrl: 'app/hero-detail.component.html',
 })
 export class HeroDetailComponent implements OnInit {
-    @Input() 
     hero: Hero;
 
     constructor(
